@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curso de Importação de Roupas | Fonte do Drip</title>
+  <meta name="description" content="Aprenda a importar roupas direto da fábrica com a Fonte do Drip. Transforme seu estilo com técnicas exclusivas e economia real. Inscreva-se agora!" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Urbanist:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #ff00ff;
+      --primary-hover: #ff73ff;
+      --secondary-color: #25D366;
+      --background-dark: #0f0f0f;
+      --background-light: #1a1a1a;
+      --text-light: #f5f5f5;
+      --text-muted: #bbb;
+      --accent-gradient: linear-gradient(45deg, #ff00ff, #ff73ff, #ff00ff);
+    }
+
+    /* Reset global */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Urbanist', sans-serif;
+      background: var(--background-dark);
+      color: var(--text-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Barra fixa de contagem */
+    .floating-timer {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      color: var(--primary-color);
+      text-align: center;
+      padding: 10px 0;
+      font-size: 1.1rem;
+      z-index: 1100;
+      box-shadow: 0 2px 10px rgba(255, 0, 255, 0.5);
+    }
+
+    /* Hero Section com efeito de fundo dinâmico */
+    header {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1606813909025-846f091b8b7f?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      filter: brightness(0.6);
+      animation: zoom 20s ease-in-out infinite;
+      z-index: -2;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--accent-gradient);
+      opacity: 0.2;
+      mix-blend-mode: overlay;
+      z-index: -1;
+      animation: gradientShift 8s ease-in-out infinite alternate;
+    }
+    @keyframes zoom {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    @keyframes gradientShift {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+    header h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 4rem;
+      text-transform: uppercase;
+      color: var(--primary-color);
+      letter-spacing: 4px;
+      margin-bottom: 15px;
+      animation: slideDown 1s ease-out;
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    header p {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin-bottom: 30px;
+      animation: slideUp 1.2s ease-out;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .btn {
+      padding: 15px 35px;
+      background: var(--primary-color);
+      color: #000;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      font-size: 1.3rem;
+      border-radius: 50px;
+      transition: transform 0.3s ease, background 0.3s ease;
+      animation: pulse 2.5s infinite;
+      box-shadow: 0 0 20px var(--primary-color);
+    }
+    .btn:hover {
+      background: var(--primary-hover);
+      transform: scale(1.1);
+    }
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 15px 5px rgba(255, 0, 255, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 25px 15px rgba(255, 115, 255, 0.6);
+      }
+    }
+
+    /* Seções de Conteúdo */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    }
+    section:nth-child(even) {
+      background-color: var(--background-light);
+    }
+    section:nth-child(odd) {
+      background-color: var(--background-dark);
+    }
+    section h2 {
+      font-size: 2.6rem;
+      margin-bottom: 30px;
+      text-align: center;
+      color: var(--primary-color);
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textGlow 2s infinite alternate;
+    }
+    @keyframes textGlow {
+      from { text-shadow: 0 0 10px var(--primary-color); }
+      to { text-shadow: 0 0 25px var(--primary-hover); }
+    }
+    section p, section li {
+      font-size: 1.2rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 12px;
+      padding-left: 30px;
+      position: relative;
+    }
+    ul li::before {
+      content: '★';
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-size: 1.3rem;
+    }
+    
+    /* Vídeo e depoimentos */
+    .video, .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    iframe {
+      width: 100%;
+      max-width: 750px;
+      height: 420px;
+      border-radius: 16px;
+      border: 3px solid var(--primary-color);
+      transition: transform 0.4s ease;
+    }
+    iframe:hover {
+      transform: scale(1.05);
+    }
+    .testimonial {
+      background: #222;
+      padding: 30px;
+      border-radius: 20px;
+      flex: 1 1 320px;
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border: 2px solid #333;
+    }
+    .testimonial:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(255, 115, 255, 0.6);
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 12px;
+      color: var(--primary-color);
+      font-size: 1.1rem;
+    }
+
+    /* Seção do Especialista */
+    .bio-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 60px 20px;
+      background-color: var(--background-light);
+    }
+    .bio-section img {
+      width: 300px;
+      border-radius: 20px;
+      border: 4px solid var(--primary-color);
+      transition: transform 0.5s ease;
+    }
+    .bio-section img:hover {
+      transform: scale(1.05);
+    }
+    .bio-text h3 {
+      font-size: 1.9rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    /* Seção de Oferta */
+    .buy-section {
+      text-align: center;
+      background: #111;
+      padding: 70px 20px;
+      border-top: 3px solid var(--primary-color);
+      border-bottom: 3px solid var(--primary-color);
+      animation: shake 1s ease-in-out infinite alternate;
+    }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(5px); }
+    }
+    .buy-section h2 {
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+    }
+    .buy-section p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .guarantee {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-top: 15px;
+    }
+    .countdown {
+      font-size: 1.9rem;
+      margin-top: 10px;
+      color: var(--primary-color);
+    }
+
+    /* Rodapé */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #000;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* Botão WhatsApp */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: var(--secondary-color);
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      text-align: center;
+      line-height: 60px;
+      z-index: 1200;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+      background-color: #1ebc5c;
+    }
+
+    /* Media Queries para dispositivos móveis */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 3rem;
+        letter-spacing: 2px;
+      }
+      header p {
+        font-size: 1.2rem;
+      }
+      iframe {
+        height: 260px;
+      }
+      .bio-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .buy-section {
+        animation: none; /* Remove shake para evitar distração em telas pequenas */
+      }
+      section {
+        padding: 60px 15px;
+      }
+    }
+    
+    /* Ajustes para telas ainda menores (ex: smartphones em modo retrato) */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      header p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+      }
+      .btn {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+      }
+      section h2 {
+        font-size: 2rem;
+      }
+      section p, section li {
+        font-size: 1rem;
+      }
+      .floating-timer {
+        font-size: 1rem;
+        padding: 8px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Contador Regressivo Fixo -->
+  <div class="floating-timer">
+    ⏳ Oferta termina em <span id="countdown"></span>
+  </div>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Fonte do Drip</h1>
+    <p>Descubra o segredo para importar roupas direto da fábrica e elevar seu estilo com economia real!</p>
+    <button class="btn" onclick="scrollToBuy()">Quero aprender agora</button>
+  </header>
+
+  <!-- Seção: O que você vai aprender -->
+  <section id="conteudo">
+    <h2>O que você vai aprender</h2>
+    <ul>
+      <li>Selecionar fornecedores confiáveis com precisão</li>
+      <li>Estratégias para reduzir custos e evitar taxas</li>
+      <li>Segredos para importar sem complicações</li>
+      <li>Criar um estilo único com produtos exclusivos</li>
+    </ul>
+  </section>
+
+  <!-- Seção: Para quem é o curso -->
+  <section id="para-quem">
+    <h2>Para quem é esse curso?</h2>
+    <p style="text-align: center;">
+      🔥 Jovens que buscam estilo e inovação<br>
+      💼 Empreendedores que querem lucrar com revenda<br>
+      😎 Quem deseja transformar seu visual com exclusividade
+    </p>
+  </section>
+
+  <!-- Seção: Depoimentos -->
+  <section class="testimonials" id="depoimentos">
+    <h2>Depoimentos Impactantes</h2>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Depoimento em vídeo" allowfullscreen></iframe>
+    </div>
+    <div class="testimonial">
+      <p>"Depois do curso, minha estratégia de importação nunca mais foi a mesma. Agora, cada peça tem seu valor de mercado!"</p>
+      <strong>– Lucas, 19 anos</strong>
+    </div>
+    <div class="testimonial">
+      <p>"A metodologia é inovadora e eficiente. Em poucos dias, já senti a diferença no meu negócio."</p>
+      <strong>– Mariana, 21 anos</strong>
+    </div>
+  </section>
+
+  <!-- Seção: Especialista -->
+  <section class="bio-section" id="especialista">
+    <img src="https://via.placeholder.com/300x400" alt="Foto do Especialista">
+    <div class="bio-text">
+      <h3>Sobre o Especialista</h3>
+      <p>Com mais de 5 anos de experiência em importação, transformei a forma de comprar moda no mercado. Agora, compartilho minhas técnicas secretas para você brilhar!</p>
+    </div>
+  </section>
+
+  <!-- Seção: Oferta e CTA -->
+  <section class="buy-section" id="buy">
+    <h2>Oferta Especial: Tempo Limitado!</h2>
+    <p>Garanta seu acesso ao curso com desconto exclusivo e transforme seu estilo. Oferta por tempo limitado com garantia de 7 dias.</p>
+    <button class="btn">Quero meu acesso agora</button>
+    <p class="guarantee">Garantia incondicional de 7 dias – sem riscos!</p>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    © 2025 Fonte do Drip. Todos os direitos reservados. Desenvolvido com criatividade e propósito.
+  </footer>
+
+  <!-- Botão WhatsApp -->
+  <a href="https://wa.me/SEUNUMEROAQUI" class="whatsapp-btn" target="_blank" title="Fale conosco no WhatsApp">
+    🟢
+  </a>
+
+  <!-- Scripts -->
+  <script>
+    function scrollToBuy() {
+      document.getElementById('buy').scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    const countdown = document.getElementById('countdown');
+    const savedDeadline = localStorage.getItem('dripDeadline');
+    const deadline = savedDeadline ? new Date(savedDeadline) : new Date(Date.now() + 3 * 24 * 60 * 60 * 1000);
+    localStorage.setItem('dripDeadline', deadline);
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = deadline - now;
+      if (diff <= 0) {
+        countdown.textContent = 'Oferta encerrada!';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
