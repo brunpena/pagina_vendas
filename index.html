@@ -53,7 +53,7 @@
       box-shadow: 0 2px 10px rgba(255, 0, 255, 0.5);
     }
 
-    /* Hero Section com efeito de fundo dinâmico */
+    /* Hero Section com fundo dinâmico */
     header {
       position: relative;
       width: 100%;
@@ -196,13 +196,17 @@
       color: var(--primary-color);
       font-size: 1.3rem;
     }
-    
+
     /* Vídeo e depoimentos */
     .video, .testimonials {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
+    }
+    /* Centraliza todo o conteúdo da seção de depoimentos */
+    .testimonials {
+      text-align: center;
     }
     iframe {
       width: 100%;
@@ -223,6 +227,8 @@
       box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       border: 2px solid #333;
+      /* Centraliza o conteúdo dos depoimentos */
+      text-align: center;
     }
     .testimonial:hover {
       transform: translateY(-5px);
@@ -235,32 +241,22 @@
       font-size: 1.1rem;
     }
 
-    /* Seção do Especialista */
-    .bio-section {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      padding: 60px 20px;
-      background-color: var(--background-light);
+    /* Seção: Introdução com seu vídeo e apresentação */
+    #intro {
+      text-align: center;
+      background-color: var(--background-dark);
+      padding: 80px 20px;
     }
-    .bio-section img {
-      width: 300px;
-      border-radius: 20px;
-      border: 4px solid var(--primary-color);
-      transition: transform 0.5s ease;
-    }
-    .bio-section img:hover {
-      transform: scale(1.05);
-    }
-    .bio-text h3 {
-      font-size: 1.9rem;
-      color: var(--primary-color);
-      margin-bottom: 15px;
+    #intro p {
+      margin-bottom: 30px;
     }
 
-    /* Seção de Oferta */
+    /* Seção: O que você vai aprender */
+    #conteudo ul li {
+      font-size: 1.2rem;
+    }
+    
+    /* Seção: Oferta e CTA */
     .buy-section {
       text-align: center;
       background: #111;
@@ -335,13 +331,6 @@
       iframe {
         height: 260px;
       }
-      .bio-section {
-        flex-direction: column;
-        text-align: center;
-      }
-      .buy-section {
-        animation: none;
-      }
       section {
         padding: 60px 15px;
       }
@@ -373,7 +362,7 @@
     }
   </style>
 </head>
-<body>
+<body onload="scrollToIntro()">
   <!-- Contador Regressivo Fixo -->
   <div class="floating-timer">
     ⏳ Oferta termina em <span id="countdown"></span>
@@ -382,9 +371,19 @@
   <!-- Hero Section -->
   <header>
     <h1>Fonte do Drip</h1>
-    <p>Descubra o segredo para importar roupas direto da fábrica e elevar seu estilo com economia real!</p>
+    <p>Descubra como transformar seu estilo com importação direta da fábrica!</p>
     <button class="btn" onclick="scrollToBuy()">Quero aprender agora</button>
   </header>
+
+  <!-- Seção: Introdução com vídeo e apresentação -->
+  <section id="intro">
+    <h2>Conheça o Produto</h2>
+    <p>Aprenda a importar roupas, sem riscos e com um preço 70% menor que nas lojas Brasileiras!</p>
+    <div class="video">
+      <!-- Insira aqui o link do seu vídeo -->
+      <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID" title="Vídeo de Apresentação" allowfullscreen></iframe>
+    </div>
+  </section>
 
   <!-- Seção: O que você vai aprender -->
   <section id="conteudo">
@@ -407,9 +406,15 @@
     </p>
   </section>
 
-  <!-- Seção: Depoimentos -->
+  <!-- Seção: Depoimentos dos Alunos -->
   <section class="testimonials" id="depoimentos">
-    <h2>Depoimentos Impactantes</h2>
+    <h2>Depoimentos dos Alunos</h2>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Depoimento em vídeo" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Depoimento em vídeo" allowfullscreen></iframe>
+    </div>
     <div class="video">
       <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Depoimento em vídeo" allowfullscreen></iframe>
     </div>
@@ -418,17 +423,24 @@
       <strong>– Lucas, 19 anos</strong>
     </div>
     <div class="testimonial">
-      <p>"A metodologia é inovadora e eficiente. Em poucos dias, já senti a diferença no meu negócio."</p>
-      <strong>– Mariana, 21 anos</strong>
+      <p>"Antes de conhecer o curso da Fonte do Drip, eu nem imaginava como seria simples importar roupas direto da fábrica. Hoje, meu negócio está faturando 3 vezes mais! Recomendo a todos que querem transformar seu visual e suas finanças."</p>
+      <strong>– Rafael, 28 anos</strong>
     </div>
-  </section>
-
-  <!-- Seção: Especialista -->
-  <section class="bio-section" id="especialista">
-    <img src="https://via.placeholder.com/300x400" alt="Foto do Especialista">
-    <div class="bio-text">
-      <h3>Sobre o Especialista</h3>
-      <p>Com mais de 5 anos de experiência em importação, transformei a forma de comprar moda no mercado. Agora, compartilho minhas técnicas secretas para você brilhar!</p>
+    <div class="testimonial">
+      <p>"O método é realmente inovador! No começo achei que era impossível importar roupas de uma forma tão fácil e barata. Se você quer andar sempre na moda gastando pouco, este curso é o caminho."</p>
+      <strong>– Gabriel, 24 anos</strong>
+    </div>
+    <div class="testimonial">
+      <p>"Eu estava cansada das altas taxas e da burocracia em importações. Com as orientações do curso, consegui economia e garantir produtos de alta qualidade."</p>
+      <strong>– Fernanda, 31 anos</strong>
+    </div>
+    <div class="testimonial">
+      <p>"O curso da Fonte do Drip é mais que uma simples metodologia; é uma verdadeira transformação. Hoje, consigo oferecer aos meus clientes roupas exclusivas com preços irresistíveis. Não perca a chance de revolucionar seu negócio!"</p>
+      <strong>– Luana, 27 anos</strong>
+    </div>
+    <div class="testimonial">
+      <p>"A metodologia é inovadora e eficiente. Simplesmente não dá pra acreditar: as roupas que eu sempre sonhei por um preço acessível!"</p>
+      <strong>– Mariana, 21 anos</strong>
     </div>
   </section>
 
@@ -452,10 +464,19 @@
 
   <!-- Scripts -->
   <script>
+    // Função para rolar até a seção de oferta
     function scrollToBuy() {
       document.getElementById('buy').scrollIntoView({ behavior: 'smooth' });
     }
+
+    // Função para rolar para a seção de introdução com o vídeo ao carregar a página
+    function scrollToIntro() {
+      setTimeout(function() {
+        document.getElementById('intro').scrollIntoView({ behavior: 'smooth' });
+      }, 500); // Delay para garantir o carregamento dos elementos
+    }
     
+    // Contador regressivo
     const countdown = document.getElementById('countdown');
     const savedDeadline = localStorage.getItem('dripDeadline');
     const deadline = savedDeadline ? new Date(savedDeadline) : new Date(Date.now() + 3 * 24 * 60 * 60 * 1000);
