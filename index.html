@@ -196,7 +196,10 @@
       color: var(--primary-color);
       font-size: 1.3rem;
     }
-
+    .indentado{
+      display: flex;
+      flex-direction: row;
+    }
     /* Vídeo e depoimentos */
     .video, .testimonials {
       display: flex;
@@ -229,6 +232,7 @@
       border: 2px solid #333;
       /* Centraliza o conteúdo dos depoimentos */
       text-align: center;
+      margin: 10px;
     }
     .testimonial:hover {
       transform: translateY(-5px);
@@ -409,38 +413,50 @@
   <!-- Seção: Depoimentos dos Alunos -->
   <section class="testimonials" id="depoimentos">
     <h2>Depoimentos dos Alunos</h2>
-    <div class="video">
-      <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Depoimento em vídeo" allowfullscreen></iframe>
+
+    <div class="indentado">
+      <a href="https://www.youtube.com/watch?v=EXEMPLO1" target="_blank" class="testimonial-link">
+        <div class="testimonial">
+          <p>"Depois do curso, minha estratégia de importação nunca mais foi a mesma. Agora, cada peça tem seu valor de mercado!"</p>
+          <strong>– Lucas, 19 anos</strong>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=EXEMPLO2" target="_blank" class="testimonial-link">
+        <div class="testimonial">
+          <p>"Antes de conhecer o curso da Fonte do Drip, eu nem imaginava como seria simples importar roupas direto da fábrica. Hoje, meu negócio está faturando 3 vezes mais! Recomendo a todos que querem transformar seu visual e suas finanças."</p>
+          <strong>– Rafael, 28 anos</strong>
+        </div>
+      </a>
     </div>
-    <div class="video">
-      <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Depoimento em vídeo" allowfullscreen></iframe>
+    
+    <div class="indentado">
+      <a href="https://www.youtube.com/watch?v=EXEMPLO3" target="_blank" class="testimonial-link">
+        <div class="testimonial">
+          <p>"O método é realmente inovador! No começo achei que era impossível importar roupas de uma forma tão fácil e barata. Se você quer andar sempre na moda gastando pouco, este curso é o caminho."</p>
+          <strong>– Gabriel, 24 anos</strong>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=EXEMPLO4" target="_blank" class="testimonial-link">
+        <div class="testimonial">
+          <p>"Eu estava cansada das altas taxas e da burocracia em importações. Com as orientações do curso, consegui economia e garantir produtos de alta qualidade."</p>
+          <strong>– Fernanda, 31 anos</strong>
+        </div>
+      </a>
     </div>
-    <div class="video">
-      <iframe src="https://www.youtube.com/embed/5qap5aO4i9A" title="Depoimento em vídeo" allowfullscreen></iframe>
-    </div>
-    <div class="testimonial">
-      <p>"Depois do curso, minha estratégia de importação nunca mais foi a mesma. Agora, cada peça tem seu valor de mercado!"</p>
-      <strong>– Lucas, 19 anos</strong>
-    </div>
-    <div class="testimonial">
-      <p>"Antes de conhecer o curso da Fonte do Drip, eu nem imaginava como seria simples importar roupas direto da fábrica. Hoje, meu negócio está faturando 3 vezes mais! Recomendo a todos que querem transformar seu visual e suas finanças."</p>
-      <strong>– Rafael, 28 anos</strong>
-    </div>
-    <div class="testimonial">
-      <p>"O método é realmente inovador! No começo achei que era impossível importar roupas de uma forma tão fácil e barata. Se você quer andar sempre na moda gastando pouco, este curso é o caminho."</p>
-      <strong>– Gabriel, 24 anos</strong>
-    </div>
-    <div class="testimonial">
-      <p>"Eu estava cansada das altas taxas e da burocracia em importações. Com as orientações do curso, consegui economia e garantir produtos de alta qualidade."</p>
-      <strong>– Fernanda, 31 anos</strong>
-    </div>
-    <div class="testimonial">
-      <p>"O curso da Fonte do Drip é mais que uma simples metodologia; é uma verdadeira transformação. Hoje, consigo oferecer aos meus clientes roupas exclusivas com preços irresistíveis. Não perca a chance de revolucionar seu negócio!"</p>
-      <strong>– Luana, 27 anos</strong>
-    </div>
-    <div class="testimonial">
-      <p>"A metodologia é inovadora e eficiente. Simplesmente não dá pra acreditar: as roupas que eu sempre sonhei por um preço acessível!"</p>
-      <strong>– Mariana, 21 anos</strong>
+    
+    <div class="indentado">
+      <a href="https://www.youtube.com/watch?v=EXEMPLO5" target="_blank" class="testimonial-link">
+        <div class="testimonial">
+          <p>"O curso da Fonte do Drip é mais que uma simples metodologia; é uma verdadeira transformação. Hoje, consigo oferecer aos meus clientes roupas exclusivas com preços irresistíveis. Não perca a chance de revolucionar seu negócio!"</p>
+          <strong>– Luana, 27 anos</strong>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/watch?v=EXEMPLO6" target="_blank" class="testimonial-link">
+        <div class="testimonial">
+          <p>"A metodologia é inovadora e eficiente. Simplesmente não dá pra acreditar: as roupas que eu sempre sonhei por um preço acessível!"</p>
+          <strong>– Mariana, 21 anos</strong>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -448,7 +464,9 @@
   <section class="buy-section" id="buy">
     <h2>Oferta Especial: Tempo Limitado!</h2>
     <p>Garanta seu acesso ao curso com desconto exclusivo e transforme seu estilo. Oferta por tempo limitado com garantia de 7 dias.</p>
-    <button class="btn">Quero meu acesso agora</button>
+    <a href="https://kiwify.com.br/sua-pagina" target="_blank">
+      <button class="btn">Quero meu acesso agora</button>
+    </a>
     <p class="guarantee">Garantia incondicional de 7 dias – sem riscos!</p>
   </section>
 
