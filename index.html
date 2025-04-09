@@ -338,6 +338,12 @@
       section {
         padding: 60px 15px;
       }
+      .testimonials {
+        flex-direction: column;
+      }
+      .indentado{
+        flex-direction: column;
+      }
     }
     
     /* Ajustes para telas ainda menores */
@@ -484,15 +490,16 @@
   <script>
     // Função para rolar até a seção de oferta
     function scrollToBuy() {
-      document.getElementById('buy').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('intro').scrollIntoView({ behavior: 'smooth' });
     }
 
     // Função para rolar para a seção de introdução com o vídeo ao carregar a página
-    function scrollToIntro() {
-      setTimeout(function() {
-        document.getElementById('intro').scrollIntoView({ behavior: 'smooth' });
-      }, 500); // Delay para garantir o carregamento dos elementos
-    }
+
+    // function scrollToIntro() {
+    //   setTimeout(function() {
+    //     document.getElementById('intro').scrollIntoView({ behavior: 'smooth' });
+    //   }, 500); // Delay para garantir o carregamento dos elementos
+    // }
     
     // Contador regressivo
     const countdown = document.getElementById('countdown');
