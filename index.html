@@ -65,6 +65,7 @@
       text-align: center;
       padding: 0 20px;
       overflow: hidden;
+      margin-top: 1%;
     }
     header::before {
       content: "";
@@ -198,7 +199,7 @@
     }
     .indentado{
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
     }
     /* Vídeo e depoimentos */
     .video, .testimonials {
@@ -213,8 +214,8 @@
     }
     iframe {
       width: 100%;
-      max-width: 750px;
-      height: 420px;
+      max-width: 725px;
+      height: 400px;
       border-radius: 16px;
       border: 3px solid var(--primary-color);
       transition: transform 0.4s ease;
@@ -222,6 +223,20 @@
     iframe:hover {
       transform: scale(1.05);
     }
+    /* .imgDepoimento{
+      border-radius: 20px;
+      border: 2px solid #ff00ff;
+    } */
+
+    .imgDepoimento {
+      border-radius: 20px;
+      border: 3px solid var(--primary-color);
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      object-fit: cover;
+    }
+
     .testimonial {
       background: #222;
       padding: 30px;
@@ -232,7 +247,7 @@
       border: 2px solid #333;
       /* Centraliza o conteúdo dos depoimentos */
       text-align: center;
-      margin: 10px;
+      margin-bottom: 30px;
     }
     .testimonial:hover {
       transform: translateY(-5px);
@@ -415,54 +430,41 @@
       😎 Quem deseja transformar seu visual com exclusividade
     </p>
   </section>
-
+  
   <!-- Seção: Depoimentos dos Alunos -->
   <section class="testimonials" id="depoimentos">
     <h2>Depoimentos dos Alunos</h2>
+    
+    <div class="indentado">
+      <div class="testimonial">
+        <img src="imgs\image.png" class="imgDepoimento">
+        <strong>– Lucas, 19 anos</strong>
+      </div>
 
-    <div class="indentado">
-      <a href="https://www.youtube.com/watch?v=EXEMPLO1" target="_blank" class="testimonial-link">
-        <div class="testimonial">
-          <p>"Depois do curso, minha estratégia de importação nunca mais foi a mesma. Agora, cada peça tem seu valor de mercado!"</p>
-          <strong>– Lucas, 19 anos</strong>
-        </div>
-      </a>
-      <a href="https://www.youtube.com/watch?v=EXEMPLO2" target="_blank" class="testimonial-link">
-        <div class="testimonial">
-          <p>"Antes de conhecer o curso da Fonte do Drip, eu nem imaginava como seria simples importar roupas direto da fábrica. Hoje, meu negócio está faturando 3 vezes mais! Recomendo a todos que querem transformar seu visual e suas finanças."</p>
-          <strong>– Rafael, 28 anos</strong>
-        </div>
-      </a>
-    </div>
-    
-    <div class="indentado">
-      <a href="https://www.youtube.com/watch?v=EXEMPLO3" target="_blank" class="testimonial-link">
-        <div class="testimonial">
-          <p>"O método é realmente inovador! No começo achei que era impossível importar roupas de uma forma tão fácil e barata. Se você quer andar sempre na moda gastando pouco, este curso é o caminho."</p>
-          <strong>– Gabriel, 24 anos</strong>
-        </div>
-      </a>
-      <a href="https://www.youtube.com/watch?v=EXEMPLO4" target="_blank" class="testimonial-link">
-        <div class="testimonial">
-          <p>"Eu estava cansada das altas taxas e da burocracia em importações. Com as orientações do curso, consegui economia e garantir produtos de alta qualidade."</p>
-          <strong>– Fernanda, 31 anos</strong>
-        </div>
-      </a>
-    </div>
-    
-    <div class="indentado">
-      <a href="https://www.youtube.com/watch?v=EXEMPLO5" target="_blank" class="testimonial-link">
-        <div class="testimonial">
-          <p>"O curso da Fonte do Drip é mais que uma simples metodologia; é uma verdadeira transformação. Hoje, consigo oferecer aos meus clientes roupas exclusivas com preços irresistíveis. Não perca a chance de revolucionar seu negócio!"</p>
-          <strong>– Luana, 27 anos</strong>
-        </div>
-      </a>
-      <a href="https://www.youtube.com/watch?v=EXEMPLO6" target="_blank" class="testimonial-link">
-        <div class="testimonial">
-          <p>"A metodologia é inovadora e eficiente. Simplesmente não dá pra acreditar: as roupas que eu sempre sonhei por um preço acessível!"</p>
-          <strong>– Mariana, 21 anos</strong>
-        </div>
-      </a>
+      <div class="testimonial">
+        <img src="imgs\image.png" class="imgDepoimento">
+        <strong>– Rafael, 28 anos</strong>
+      </div>
+
+      <div class="testimonial">
+        <img src="imgs\image.png" class="imgDepoimento">
+        <strong>– Gabriel, 24 anos</strong>
+      </div>
+
+      <div class="testimonial">
+        <img src="imgs\image.png" class="imgDepoimento">
+        <strong>– Fernanda, 31 anos</strong>
+      </div>
+
+      <div class="testimonial">
+        <img src="imgs\image.png" class="imgDepoimento">
+        <strong>– Luana, 27 anos</strong>
+      </div>
+
+      <div class="testimonial">
+        <img src="imgs\image.png" class="imgDepoimento">
+        <strong>– Mariana, 21 anos</strong>
+      </div>
     </div>
   </section>
 
