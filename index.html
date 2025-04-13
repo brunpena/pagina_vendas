@@ -249,68 +249,57 @@
       color: var(--primary-color);
       font-size: 1.1rem;
     }
-
-    .preco-section {
-      background-color: #fce8ef;
-      padding: 60px 20px;
-      text-align: center;
-      font-family: 'Arial', sans-serif;
+    .preco-container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
     }
-
-    .preco-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .preco-titulo {
-      font-size: 28px;
-      font-weight: bold;
-      color: var(--text-light);
-    }
-
-    .destaque {
-      color: var(--primary-color);
-      text-decoration: underline;
-    }
-
-    .preco-descricao {
-      font-size: 18px;
-      color: var(--text-light);
-      margin-top: 20px;
-    }
-
+    
     .preco-destaque-final {
-      display: inline-block;
-      position: relative;
-      padding: 10px 10px 30px;
-      margin-top: 40px;
-      font-size: 20px;
-    }
+  display: inline-block;
+  position: relative, center;
+  padding: 10px 10px 30px;
+  margin-top: 40px;
+  font-size: 3vw;
+  text-align: center;
+  max-width: 100%;
+}
 
-    .preco-destaque-final strong {
-      position: relative;
-      z-index: 2;
-      padding: 0 5px;
-    }
+.preco-destaque-final strong {
+  position: relative;
+  z-index: 2;
+  padding: 0 5px;
+  display: inline-block;
+}
 
-    .preco-destaque-final .rabisco {
-      position: absolute;
-      bottom: 5px; /* ajusta para ficar logo atrás da base do texto */
-      left: 0;
-      width: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
+.preco-destaque-final .rabisco {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
 
-    .rabisco{
-      position: absolute;
-      bottom: 0;
-      transform: translateY(-15%) scale(1.2); /* centraliza e escala */
-      transform-origin: bottom;
-      z-index: 1;
-      /* transform: scale(1.2); aumenta só a altura em 50% */
-      /* transform-origin: bottom; mantém a base alinhada com o texto */
-    }
+.rabisco {
+  transform: translateY(-70%) scaleX(0.9); /* leve ajuste para melhor alinhamento */
+  transform-origin: bottom;
+}
+
+/* Ajuste adicional para telas pequenas */
+@media (max-width: 600px) {
+  .preco-destaque-final {
+    font-size: 6vw;
+    padding-bottom: 40px;
+  }
+
+  .rabisco {
+    transform: translateY(-145%) scaleY(3) scaleX(0.9); /* ajusta a posição do rabisco */
+  }
+}
+
 
     #intro {
       text-align: center;
@@ -385,6 +374,26 @@
       background-color: #1ebc5c;
     }
 
+    .recado-atencao{
+      width: 20vw;
+      height: 5vh;
+
+      display: flex;
+
+      background-color: var(--background-light);
+      border-radius: 10px;
+    }
+    .atencao{
+      width: 100%;
+      height: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: #bbb;
+    }
+
     @media (max-width: 768px) {
       header h1 {
         font-size: 3rem;
@@ -430,149 +439,20 @@
         padding: 8px 0;
       }
     }
-    
-    /*Garantia*/
-
-    .garantia-container {
-      background-color: #fbeff2;
-      padding: 50px 20px;
+    .outras-opcoes{
+      margin-top: 20px;
       display: flex;
       justify-content: center;
+      gap: 20px;
+      margin: 20px;
+      flex-direction: row;
     }
-
-    .garantia-box {
-      background-color: #660029;
-      color: white;
-      border-radius: 10px;
-      padding: 40px;
-      max-width: 900px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      flex-wrap: wrap;
-      gap: 30px;
-      animation: fadeInUp 0.8s ease;
+      @media (max-width: 768px) {
+        .outras-opcoes{
+          flex-direction: column;
+        }
     }
-
-    .garantia-left h2 {
-      font-size: 2rem;
-      margin: 0 0 10px 0;
-    }
-
-    .underline {
-      width: 30px;
-      height: 3px;
-      background-color: #ff006e;
-      margin-top: 5px;
-    }
-
-    .garantia-right {
-      flex: 1;
-      min-width: 250px;
-    }
-
-    .garantia-title {
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .garantia-desc {
-      margin-bottom: 20px;
-      line-height: 1.5;
-      color: #f0f0f0;
-    }
-
-    .garantia-btn {
-      background-color: #ff006e;
-      color: white;
-      text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 6px;
-      font-weight: bold;
-      display: inline-block;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .garantia-btn:hover {
-      background-color: #e60063;
-      transform: scale(1.05);
-    }
-
-    .btn-sub {
-      font-size: 0.8rem;
-      opacity: 0.8;
-      margin-left: 5px;
-    }
-
-    .garantia-icon {
-      position: absolute;
-      right: -40px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: #b3003c;
-      padding: 30px;
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    .garantia-icon img {
-      width: 40px;
-      height: 40px;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(255, 0, 110, 0.6);
-      }
-      70% {
-        box-shadow: 0 0 0 20px rgba(255, 0, 110, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(255, 0, 110, 0);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .garantia-box {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 30px 20px;
-      }
-
-      .garantia-icon {
-        position: static;
-        align-self: flex-end;
-        transform: none;
-        margin-top: 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .garantia-left h2 {
-        font-size: 1.5rem;
-      }
-
-      .garantia-btn {
-        width: 100%;
-        text-align: center;
-      }
-    }
-  </style>
+    </style>
 </head>
 <body onload="scrollToIntro()">
   <div class="floating-timer">
@@ -674,36 +554,12 @@
     <p class="guarantee">Garantia incondicional de 7 dias – sem riscos!</p>
   </section>
 
-  <section>
-    <div class="garantia-container">
-      <div class="garantia-box">
-        <div class="garantia-left">
-          <h2>Garantia <br> de 7 dias</h2>
-          <div class="underline"></div>
-        </div>
-    
-        <div class="garantia-right">
-          <p class="garantia-title">O RISCO É TODO MEU!</p>
-          <p class="garantia-desc">
-            <strong>Garantia incondicional de 7 dias</strong> – Se dentro desse período você sentir que não é para você, devolvemos 100% do seu dinheiro,
-            <strong>sem perguntas, sem burocracia.</strong>
-          </p>
-          <a href="#" class="garantia-btn">🚀 QUERO APRENDER AGORA! ↗ <span class="btn-sub"> (sem risco nenhum)</span></a>
-        </div>
-    
-        <div class="garantia-icon">
-          <img src="https://cdn-icons-png.flaticon.com/512/5610/5610944.png" alt="Ícone de escudo">
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="options-section" style="background-color: #000; padding: 60px 20px; text-align: center;">
     <h2 style="color: #ff00ff;">AGORA, VOCÊ TEM APENAS DUAS OPÇÕES...</h2>
 
     <hr>
     
-    <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px; margin: 20px; flex-direction: column;">
+    <div class="outras-opcoes">
 
       <div style="background-color: #ff4c4c; color: #fff; padding: 20px; border-radius: 10px; flex: 1; text-align: justify;flex-direction: row; align-items: center; justify-content: center;">
         <strong>Continuar tentando sozinho, vendo vídeos soltos na internet, sem um caminho claro para aprender e importar de forma profissional.</strong>
@@ -714,7 +570,12 @@
       </div>
     </div>
     <hr>
-    <p style="color: #ff0000; margin-top: 20px;">⚠️ AS VAGAS SÃO LIMITADAS E ESSA OFERTA PODE SAIR DO AR A QUALQUER MOMENTO!</p>
+    <div class="recado-atencao">
+      <div class="atencao">
+        ⚠️
+      </div>
+      <p>AS VAGAS SÃO LIMITADAS E ESSA OFERTA PODE SAIR DO AR A QUALQUER MOMENTO!</p>
+    </div>
   </section>
 
   <!-- Rodapé -->
