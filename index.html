@@ -254,40 +254,21 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      
     }
     
     .preco-destaque-final {
-      display: inline-block;
-      position: relative, center;
-      padding: 10px 10px 30px;
-      margin-top: 40px;
-      font-size: 3vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2vw;
+      padding-top: 40px;
       text-align: center;
-      max-width: 100%;
     }
 
-    .preco-destaque-final strong {
-      position: relative;
-      z-index: 2;
-      padding: 0 5px;
-      display: inline-block;
+    #sublinhar{
+      color: var(--primary-color);
     }
-
-    .preco-destaque-final .rabisco {
-      position: absolute;
-      bottom: 5px;
-      left: 0;
-      width: 100%;
-      height: auto;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .rabisco {
-      transform: translateY(-70%) scaleX(0.9); 
-      transform-origin: bottom;
-    }
-
 
     #intro {
       text-align: center;
@@ -406,8 +387,8 @@
     }
 
     .recado-atencao{
-      width: 50vw;
-      height: 20vh;
+      width: 30vw;
+      height: 10vh;
       
       display: flex;
       justify-content: center;
@@ -422,7 +403,7 @@
 
     .recado-atencao p {
       font-size: 15px;
-      padding: 5vw;
+      padding: 20px;
     }
     .atencao{
       width: 40%;
@@ -438,9 +419,17 @@
     }
 
     .alerta{
-      width: 10vw;
-      height: auto;
+      width: 5vw;
+      height:auto;
       vertical-align: middle;
+    }
+    @media (max-width: 1200px) {
+      .preco-destaque-final {
+        font-size: 6vw;
+      }
+      .recado-atencao{
+        width: 50vw;
+      }
     }
 
     @media (max-width: 768px) {
@@ -476,8 +465,8 @@
       .alerta{
         height: min-content;
       }
-      .rabisco {
-        transform: translateY(-90%)  scaleX(0.9);
+      .preco-destaque-final{
+        font-size: 4vw;
       }
       
     }
@@ -494,9 +483,7 @@
       .outras-opcoes {
         flex-direction: column;
       }
-      .rabisco {
-        transform: translateY(-130%) scaleY(3) scaleX(0.9);
-      }
+      
     }
 
     @media (max-width: 420px) {
@@ -534,9 +521,7 @@
       .alerta{
         height: min-content;
       }
-      .rabisco {
-        transform: translateY(-200%) scaleY(3);
-      }
+      
     }  
 
     @media (max-width: 390px) {
@@ -614,6 +599,7 @@
   </section>
   <section class="preco-section">
     <div class="preco-container">
+
       <p class="preco-titulo">
         AGORA VOCÊ DEVE ESTAR SE PERGUNTANDO: 
         <span class="destaque">QUANTO CUSTA</span> TUDO ISSO?
@@ -623,14 +609,9 @@
         Se você fosse aprender tudo isso sozinho, gastaria facilmente 
         <strong>R$2.000,00</strong> ou mais em mentorias, planilhas, fornecedores e anos de tentativa e erro.
       </p>
-    
-        
-
+      
       <div class="preco-destaque-final">
-        <strong>MAS EU NÃO VOU COBRAR NEM PERTO DISSO.</strong>
-        <svg class="rabisco" width="100%" height="50" viewBox="0 0 800 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13.1521 19.9044C47.6223 11.6272 145.138 4.01757 263.906 4.01757C433.037 4.01757 784 -5.12468 784 40.5571C784 86.2389 445.831 72.8971 289.854 73.9984C116.976 75.2187 2 63.5608 2 38.1528C2 18.3291 115.759 -11.2671 251.064 8.55667" stroke="#ff00ff" stroke-width="2.57576" stroke-linecap="round" stroke-dasharray="1.72 1.72"/>
-        </svg>
+        <u id="sublinhar"><strong>MAS EU NÃO VOU COBRAR NEM PERTO DISSO.</strong></u>
       </div>
       
       
